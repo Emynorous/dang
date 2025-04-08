@@ -1,0 +1,19 @@
+<form action="/auth/register" method="POST" onsubmit="return validateForm()">
+    <input name="username" placeholder="Uživatelské jméno" required>
+    <input name="name" placeholder="Jméno" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="password" type="password" placeholder="Heslo" required>
+    <button type="submit">Registrovat</button>
+  </form>
+  
+  <script>
+    function validateForm() {
+      const password = document.querySelector('input[name="password"]').value;
+      if (password.length < 6) {
+        alert("Heslo musí mít alespoň 6 znaků.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+  
